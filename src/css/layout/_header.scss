@@ -1,0 +1,15 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+// Header
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 1rem 2rem 0.3rem 2rem;
+    @include mixins.center-flex();
+    z-index: 3;
+    background-color: variables.$background-color;
+}

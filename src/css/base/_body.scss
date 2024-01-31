@@ -1,0 +1,12 @@
+@use '../abstracts/variables';
+
+// Body
+body {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-family: variables.$font-text;
+    font-weight: 400;
+    background-color: variables.$background-color;
+    color: variables.$dark-text-color;
+    height: 100%;
+}

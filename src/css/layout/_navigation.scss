@@ -1,0 +1,35 @@
+@use '../abstracts/variables';
+
+// Navigation
+nav {
+    margin: 4rem 0 0 0;
+    padding: 2rem 0 2rem 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    ul {
+        display: flex;
+    }
+
+    li {
+        list-style-type: none;
+        padding: 0 2rem 0 1rem;
+        margin: 0 1rem;
+        border-right: 1px solid black;
+    }
+
+    a {
+        color: variables.$link-color;
+        font-size: 2.2rem;
+        text-decoration: none;
+        font-family: variables.$font-heading;
+        letter-spacing: 0.2rem;
+
+        &:hover {
+            color: variables.$hover-color;
+            text-decoration: underline;
+            text-underline-offset: 0.5rem;
+            text-decoration-color: black;
+        }
+    }
+}

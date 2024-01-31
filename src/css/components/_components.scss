@@ -1,0 +1,15 @@
+@use '../abstracts/variables';
+
+// Globala värden
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Responsiva bilder
+img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}

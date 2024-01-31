@@ -1,0 +1,51 @@
+@use '../abstracts/variables';
+
+// Typografi
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+
+/* Styling för rubriker */
+h1 {
+    font-size: 3rem;
+    font-family: variables.$font-heading;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+    margin: 4rem 0 0 0;
+    letter-spacing: 0.5rem;
+    line-height: 4rem;
+}
+
+h2 {
+    font-size: 2.6rem;
+    font-family: variables.$font-heading;
+    color: black;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin: 4rem 0 2rem 0;
+    padding: 4rem 0 0 0;
+    line-height: 3.6rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+    font-family: variables.$font-heading;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    margin: 4rem 0 0 0;
+    line-height: 3.4rem;
+}
+
+h4 {
+    font-size: 2rem;
+    font-family: variables.$font-heading;
+    color: black;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    margin: 4rem 0 0 0;
+    line-height: 3rem;
+}
