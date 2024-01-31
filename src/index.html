@@ -5,11 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap">
     <script src="js/main.js" type="module"></script>
-    <title>Document</title>
+    <title>Start - Moment 1</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
+
+    <body>
+        <div></div>
+        <header>
+            <div id="logo">
+                <a href="index.html">
+                    <img src="images/logo.svg" alt="Logotyp">
+                </a>
+            </div>
+            <nav id="computernav">
+                <ul>
+                    <li><a class="active" href="index.html">START</a></li>
+                    <li><a href="sass.html">SASS</a></li>
+                    <li><a href="#">BILDER</a></li>
+                    <li><a href="#">UTVECKLING</a></li>
+                    <li><a href="#">OM MIG</a></li>
+                </ul>
+            </nav>
+            <!-- Hamburgermeny för mobil -->
+            <button class="menubtn" aria-label="Huvudmeny">
+                <span class="menuicon">
+                    <span id="line1"></span>
+                    <span id="line2"></span>
+                    <span id="line3"></span>
+                </span>
+            </button>
+        </header>
+
+        <nav id="mobilenav">
+            <ul>
+                <li><a class="active" href="index.html">START</a></li>
+                <li><a href="sass.html">SASS</a></li>
+                <li><a href="#">BILDER</a></li>
+                <li><a href="#">UTVECKLING</a></li>
+                <li><a href="#">OM MIG</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section>
+                <h2>Uppgiftsbeskrivning</h2>
+                <p>Denna uppgift ingår i kursen DT211G Frontend-baserad webbutveckling. Uppgiften går ut på att skapa en
+                    automatiserad utvecklingsmiljö. Detta kommer att göras med hjälp av Git, NodeJS samt Parcel.</p>
+                <p>De uppgifter som kommer att automatiseras är minifering av CSS samt HTML, transpilering och
+                    minifiering
+                    av
+                    JavaScript, optimering av bilder, bakåtkomplabilitet i genererade filer samt kopiering av
+                    arbetsfiler
+                    till
+                    publiceringsmapp för optimerade filer.</p>
+                <p>Syftet med uppgiften är att förstå och lära mig mer om hur NodeJS och Git kan användas för att
+                    förenkla
+                    och
+                    automatisera arbetet med att utveckla en webbplats.</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Isa Westling</p>
+            <p>DT211G Frontend-baserad webbutveckling</p>
+            <p>Webbutvecklingsprogrammet, Mittuniversitetet</p>
+        </footer>
+    </body>
 
 </body>
 
