@@ -1,6 +1,22 @@
+@use 'variables';
+
 @mixin center-flex() {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin för gemensamma egenskaper för rubriker
+@mixin heading-style($font-size, $line-height) {
+  font-size: $font-size;
+  font-family: variables.$font-heading;
+  color: black;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  line-height: $line-height;
+
+  @media (prefers-color-scheme: dark) {
+    color: white;
   }
+}

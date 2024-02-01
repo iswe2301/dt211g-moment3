@@ -1,19 +1,17 @@
 // Importerar partials med use
-@use 'base/normalize';
-@use 'base/typography';
-@use 'base/body';
 
 @use 'abstracts/variables';
 @use 'abstracts/mixins';
+@use 'abstracts/extends';
+
+@use 'base/basics';
+@use 'base/typography';
 
 @use 'layout/flex';
-@use 'layout/header';
 @use 'layout/navigation';
 @use 'layout/footer';
 
-@use 'components/components';
+@use 'components/images';
 
 @use 'pages/index';
 @use 'pages/sass';
-
-@use 'themes/theme';

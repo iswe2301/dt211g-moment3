@@ -1,7 +1,26 @@
 @use '../abstracts/variables';
+@use '../abstracts/mixins';
+@use '../abstracts/extends';
+
+// Header
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 1rem 2rem 0.3rem 2rem;
+    @include mixins.center-flex();
+    z-index: 3;
+    background-color: variables.$background-color;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: variables.$darkmode-background-color;
+    }
+}
 
 // Navigation
-nav {
+#computernav {
     margin: 4rem 0 0 0;
     padding: 2rem 0 2rem 0;
     border-top: 1px solid black;
@@ -16,20 +35,128 @@ nav {
         padding: 0 2rem 0 1rem;
         margin: 0 1rem;
         border-right: 1px solid black;
+
+        @media (prefers-color-scheme: dark) {
+            border-color: white;
+        }
     }
 
     a {
-        color: variables.$link-color;
-        font-size: 2.2rem;
-        text-decoration: none;
-        font-family: variables.$font-heading;
-        letter-spacing: 0.2rem;
+        @extend %link-styles;
+    }
 
-        &:hover {
-            color: variables.$hover-color;
-            text-decoration: underline;
-            text-underline-offset: 0.5rem;
-            text-decoration-color: black;
+    @media screen and (max-width: 1024px) {
+        display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        border-color: white;
+    }
+}
+
+#mobilenav {
+    display: none;
+    background-color: variables.$background-color;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.70);
+    position: fixed;
+    right: 0;
+    top: 80px;
+    height: 100vh;
+    padding: 0 2rem;
+    width: auto;
+    min-width: 300px;
+    z-index: 2;
+
+    ul {
+        margin-top: 80%;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    li {
+        margin: 2rem 0;
+        list-style-type: none;
+    }
+
+    a {
+        @extend %link-styles;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background-color: variables.$darkmode-background-color;
+    }
+}
+
+.active {
+    @extend %active-link;
+}
+
+/* Styling för mobilknapp */
+.menubtn {
+    display: flex;
+    position: fixed;
+    top: 14rem;
+    right: 3rem;
+    border: none;
+    background-color: variables.$background-color;
+    align-items: center;
+    cursor: pointer;
+    z-index: 3;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: variables.$darkmode-background-color;
+    }
+
+    /* Styling för menytext */
+    #menu-text {
+        @include mixins.heading-style(2.4rem, 2.4rem);
+        margin-right: 10%;
+    }
+
+    /* Hamburgermeny bestående av tre linjer, förändras under 0.4 sekunder */
+    #line1,
+    #line2,
+    #line3 {
+        width: 22px;
+        height: 3px;
+        background-color: black;
+        margin: 5px 0;
+        transition: 0.4s;
+        display: block;
+
+        @media (prefers-color-scheme: dark) {
+            background-color: white;
         }
     }
+
+    /* Ändrar position och rotrar första linjen -45 grader genom klassen cross (JS) */
+    .cross #line1 {
+        transform: translate(0, 8px) rotate(-45deg);
+    }
+
+    /* Fadear ut mitten-linjen i hamburgermenyn genom klassen cross (JS) */
+    .cross #line2 {
+        opacity: 0;
+    }
+
+    /* Ändrar position och rotrar tredje linjen 45 grader genom klassen cross (JS) */
+    .cross #line3 {
+        transform: translate(0, -8px) rotate(45deg);
+    }
+
+    @media screen and (min-width: 1025px) {
+        display: none;
+    }
+}
+
+/* Klass för opacitet när mobilmeny öppnas (JS) */
+.opacity {
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
