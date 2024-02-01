@@ -20,11 +20,9 @@
     <body>
         <div></div>
         <header>
-            <div id="logo">
                 <a href="index.html">
-                    <img src="images/logo.svg" alt="Logotyp">
+                    <img id=logo src="images/logo.svg" alt="Logotyp">
                 </a>
-            </div>
             <nav id="computernav">
                 <ul>
                     <li><a class="active" href="index.html">START</a></li>
@@ -36,6 +34,7 @@
             </nav>
             <!-- Hamburgermeny för mobil -->
             <button class="menubtn" aria-label="Huvudmeny">
+                <span id="menu-text">MENY</span>
                 <span class="menuicon">
                     <span id="line1"></span>
                     <span id="line2"></span>
@@ -56,7 +55,7 @@
 
         <main>
             <section>
-                <h2>Uppgiftsbeskrivning</h2>
+                <h1>Uppgiftsbeskrivning</h1>
                 <p>Denna uppgift ingår i kursen DT211G Frontend-baserad webbutveckling. Uppgiften går ut på att skapa en
                     automatiserad utvecklingsmiljö. Detta kommer att göras med hjälp av Git, NodeJS samt Parcel.</p>
                 <p>De uppgifter som kommer att automatiseras är minifering av CSS samt HTML, transpilering och
