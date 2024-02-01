@@ -1,0 +1,12 @@
+@use '../abstracts/variables';
+
+// Responsiva bilder
+img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+#logo {
+    max-width: 1200px;
+}

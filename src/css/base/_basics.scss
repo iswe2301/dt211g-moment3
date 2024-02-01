@@ -1,0 +1,32 @@
+@use '../abstracts/variables';
+
+// Globala värden
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Body
+body {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-family: variables.$font-text;
+    font-weight: 400;
+    background-color: variables.$background-color;
+    color: variables.$dark-text-color;
+    height: 100%;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: variables.$darkmode-background-color;
+        color: variables.$darkmode-text-color;
+    }
+}
+
+// Sektioner, paragrafer
+section {
+    p {
+        margin: 1rem;
+        max-width: 75ch;
+    }
+}
