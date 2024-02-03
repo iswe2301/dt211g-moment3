@@ -9,24 +9,23 @@ html {
 
 /* Styling för rubriker */
 h1 {
-    @include mixins.heading-style(3rem, 4rem);
+    @include mixins.heading-style(3rem, 4rem, 700);
     text-align: center;
+    color: variables.$darkmode-primary-color !important;
     margin: 4rem 0 2rem 0;
 }
 
 h2 {
-    @include mixins.heading-style(2.6rem, 2.6rem);
-    text-align: center;
+    @include mixins.heading-style(2.6rem, 2.6rem, 600);
     margin: 4rem 0 2rem 0;
-    padding: 4rem 0 0 0;
 }
 
 h3 {
-    @include mixins.heading-style(2.4rem, 3.4rem);
+    @include mixins.heading-style(2.4rem, 3.4rem, 600);
     margin: 4rem 0 0 0;
 }
 
 h4 {
-    @include mixins.heading-style(2rem, 3rem);
+    @include mixins.heading-style(2rem, 3rem, 600);
     margin: 4rem 0 0 0;
 }
