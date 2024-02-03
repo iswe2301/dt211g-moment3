@@ -20,16 +20,39 @@
     <body>
         <div></div>
         <header>
-                <a href="index.html">
-                    <img id=logo src="images/logo.svg" alt="Logotyp">
-                </a>
+            <picture class="background-img">
+                <source srcset="images/header_background.jpg?as=avif" media="(min-width: 1201px)" type="image/avif">
+                <source srcset="images/header_background.jpg?as=webp" media="(min-width: 1201px)" type="image/webp">
+                <source srcset="images/header_background.jpg" media="(min-width: 1201px)" type="image/jpeg">
+                <source srcset="images/header_background.jpg?as=avif&width=1200"
+                    media="(min-width: 801px) and (max-width: 1200px)" type="image/avif">
+                <source srcset="images/header_background.jpg?as=webp&width=1200"
+                    media="(min-width: 801px) and (max-width: 1200px)" type="image/webp">
+                <source srcset="images/header_background.jpg?width=1200"
+                    media="(min-width: 801px) and (max-width: 1200px)" type="image/jpeg">
+                <source srcset="images/header_background.jpg?as=avif&width=800"
+                    media="(min-width: 501px) and (max-width: 800px)" type="image/avif">
+                <source srcset="images/header_background.jpg?as=webp&width=800"
+                    media="(min-width: 501px) and (max-width: 800px)" type="image/webp">
+                <source srcset="images/header_background.jpg?width=800"
+                    media="(min-width: 501px) and (max-width: 800px)" type="image/jpeg">
+                <source srcset="images/header_background.jpg?as=avif&width=500" media="(max-width: 500px)"
+                    type="image/avif">
+                <source srcset="images/header_background.jpg?as=webp&width=500" media="(max-width: 500px)"
+                    type="image/webp">
+                <source srcset="images/header_background.jpg?width=500" media="(max-width: 500px)" type="image/jpeg">
+                <img id="header-background" src="images/header_background.jpg" alt="Blå himmel med moln">
+            </picture>
+            <a href="index.html">
+                <img id=logo src="images/logo.svg" alt="Logotyp">
+            </a>
             <nav id="computernav">
                 <ul>
                     <li><a class="active" href="index.html">START</a></li>
                     <li><a href="sass.html">SASS</a></li>
                     <li><a href="#">BILDER</a></li>
                     <li><a href="#">UTVECKLING</a></li>
-                    <li><a href="#">OM MIG</a></li>
+                    <li class="no-border"><a href="#">OM MIG</a></li>
                 </ul>
             </nav>
             <!-- Hamburgermeny för mobil -->
@@ -54,21 +77,24 @@
         </nav>
 
         <main>
-            <section>
-                <h1>Uppgiftsbeskrivning</h1>
-                <p>Denna uppgift ingår i kursen DT211G Frontend-baserad webbutveckling. Uppgiften går ut på att skapa en
-                    automatiserad utvecklingsmiljö. Detta kommer att göras med hjälp av Git, NodeJS samt Parcel.</p>
-                <p>De uppgifter som kommer att automatiseras är minifering av CSS samt HTML, transpilering och
-                    minifiering
-                    av
-                    JavaScript, optimering av bilder, bakåtkomplabilitet i genererade filer samt kopiering av
-                    arbetsfiler
-                    till
-                    publiceringsmapp för optimerade filer.</p>
-                <p>Syftet med uppgiften är att förstå och lära mig mer om hur NodeJS och Git kan användas för att
-                    förenkla
-                    och
-                    automatisera arbetet med att utveckla en webbplats.</p>
+            <h1>VÄLKOMMEN!</h1>
+            <section class="flex-reverse">
+                <div>
+                    <h2>Kul att du hittat hit!</h2>
+                    <p>Mitt namn är Isa och jag är en 28-årig webbutvecklingsstudent baserad i Sundsvall. För närvarande läser jag den andra terminen på Webbutvecklingsprogrammet på Mittuniversitetet. Tidigare har jag studerat PR & kommunikation (kandidatexamen) och genomfört ett påbyggnadsår i journalistik.
+                    </p>
+                    <p>Jag är passionerad för webbutveckling och intresserar mig extra mycket för utveckling inom frontend-programmering och UX. Vid sidan av mina studier arbetar jag som e-learningproducent med fokus på att utveckla vårt kursverktyg, där CSS spelar en central roll. Jag har ett stort intresse för att lära mig mer om programmering och strävar efter att arbeta inom frontend-utveckling i framtiden.
+                    </p>
+                    <p>Utöver jobb och studier tycker jag om att resa runt i vår van och upptäcka nya ställen runt om i världen tillsammans med min sambo och vår hund. Jag värdesätter också tid med familj, vänner, vara ute i naturen och älskar att kontinuerligt lära mig nya saker.</p>
+                <p>Klicka på knappen för att läsa mer om vad jag lär mig just nu!</p>
+                <button>Gå till SASS</button>
+                </div>
+                <picture>
+                    <source srcset="images/portrait.png?as=avif" type="image/avif">
+                    <source srcset="images/portrait.png?as=webp" type="image/webp">
+                    <source srcset="images/portrait.png" type="image/png">
+                    <img id="portrait" src="images/portrait.png" alt="Porträtt Isa Westling">
+                </picture>
             </section>
         </main>
 
