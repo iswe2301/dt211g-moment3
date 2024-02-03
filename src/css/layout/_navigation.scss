@@ -4,12 +4,11 @@
 
 // Header
 header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: auto;
-    padding: 1rem 2rem 0.3rem 2rem;
     @include mixins.center-flex();
     z-index: 3;
     background-color: variables.$background-color;
@@ -21,10 +20,12 @@ header {
 
 // Navigation
 #computernav {
+    position: absolute;
+    top: 50%;
     margin: 4rem 0 0 0;
     padding: 2rem 0 2rem 0;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid variables.$darkmode-primary-color;
+    border-bottom: 1px solid variables.$darkmode-primary-color;
 
     ul {
         display: flex;
@@ -34,10 +35,10 @@ header {
         list-style-type: none;
         padding: 0 2rem 0 1rem;
         margin: 0 1rem;
-        border-right: 1px solid black;
+        border-right: 1px solid variables.$darkmode-primary-color;
 
         @media (prefers-color-scheme: dark) {
-            border-color: white;
+            border-color: variables.$darkmode-text-color;
         }
     }
 
@@ -45,37 +46,49 @@ header {
         @extend %link-styles;
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 700px) {
         display: none;
     }
 
     @media (prefers-color-scheme: dark) {
-        border-color: white;
+        border-color: variables.$darkmode-text-color;
     }
+}
+
+.no-border {
+    border-right: none !important;
 }
 
 #mobilenav {
     display: none;
     background-color: variables.$background-color;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.70);
-    position: fixed;
+    position: absolute;
     right: 0;
-    top: 80px;
-    height: 100vh;
-    padding: 0 2rem;
-    width: auto;
-    min-width: 300px;
+    top: 200px;
+    height: auto;
+    padding: 10rem 2rem 0 2rem;
+    width: 100vw;
     z-index: 2;
 
     ul {
-        margin-top: 80%;
         width: 100%;
+        margin-top: 25%;
+        padding-bottom: 2rem;
         text-align: center;
         flex-direction: column;
+
+        @media screen and (max-width: 600px) {
+            margin-top: 15%;
+        }
+
+        @media screen and (max-width: 480px) {
+            margin-top: 0;
+        }
     }
 
     li {
-        margin: 2rem 0;
+        margin: 4rem 0;
         list-style-type: none;
     }
 
@@ -86,32 +99,33 @@ header {
     @media (prefers-color-scheme: dark) {
         background-color: variables.$darkmode-background-color;
     }
+
+    @media screen and (max-width: 480px) {
+        padding: 8rem 2rem 0 2rem;
+    }
 }
 
 .active {
     @extend %active-link;
 }
 
-/* Styling för mobilknapp */
+/* Styling för mobilmenyknapp */
 .menubtn {
     display: flex;
-    position: fixed;
-    top: 14rem;
-    right: 3rem;
+    position: absolute;
+    top: 50%;
+    right: 3.5rem;
     border: none;
-    background-color: variables.$background-color;
+    background-color: transparent;
     align-items: center;
     cursor: pointer;
     z-index: 3;
 
-    @media (prefers-color-scheme: dark) {
-        background-color: variables.$darkmode-background-color;
-    }
-
     /* Styling för menytext */
     #menu-text {
-        @include mixins.heading-style(2.4rem, 2.4rem);
+        @include mixins.heading-style(2.4rem, 2.4rem, 600);
         margin-right: 10%;
+        color: variables.$darkmode-primary-color !important;
     }
 
     /* Hamburgermeny bestående av tre linjer, förändras under 0.4 sekunder */
@@ -120,13 +134,13 @@ header {
     #line3 {
         width: 22px;
         height: 3px;
-        background-color: black;
+        background-color: variables.$darkmode-primary-color;
         margin: 5px 0;
         transition: 0.4s;
         display: block;
 
         @media (prefers-color-scheme: dark) {
-            background-color: white;
+            background-color: variables.$darkmode-text-color;
         }
     }
 
@@ -145,7 +159,7 @@ header {
         transform: translate(0, -8px) rotate(45deg);
     }
 
-    @media screen and (min-width: 1025px) {
+    @media screen and (min-width: 701px) {
         display: none;
     }
 }
