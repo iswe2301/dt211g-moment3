@@ -8,15 +8,15 @@
 }
 
 // Mixin för gemensamma egenskaper för rubriker
-@mixin heading-style($font-size, $line-height) {
+@mixin heading-style($font-size, $line-height, $font-weight) {
   font-size: $font-size;
   font-family: variables.$font-heading;
-  color: black;
-  font-weight: 700;
+  color: variables.$sub-head-color;
+  font-weight: $font-weight;
   letter-spacing: 0.2rem;
   line-height: $line-height;
 
   @media (prefers-color-scheme: dark) {
-    color: white;
+    color: variables.$darkmode-text-color;
   }
 }
