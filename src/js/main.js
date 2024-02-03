@@ -3,10 +3,12 @@
 // Variabler
 const menuBtnEl = document.querySelector(".menubtn");
 const containerEl = document.querySelector("div");
+const sassBtnEl = document.getElementById("SASS-btn");
 
 // Händelselyssnare vid klick somm anropar funktioner
 menuBtnEl.addEventListener("click", transformMenu);
 menuBtnEl.addEventListener("click", dropDownMenu);
+sassBtnEl.addEventListener("click", goToSass);
 
 // Funktion för att växla mellan klassen cross samt opacity vid klick.
 // Hämtar element genom class.
@@ -32,4 +34,9 @@ function dropDownMenu() {
         mobilenavEl.style.display = "block";
         menutextEl.innerHTML = "STÄNG";
     }
+}
+
+// Funktion för att gå till SASS-sidan
+function goToSass() {
+    window.location.href = "sass.html"
 }
