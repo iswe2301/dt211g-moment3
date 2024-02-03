@@ -4,9 +4,42 @@
 img {
     width: 100%;
     height: auto;
-    max-width: 100%;
+}
+
+.background-img {
+    width: 100%;
 }
 
 #logo {
-    max-width: 1200px;
+    max-width: 1024px;
+    min-height: 60px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 0 2rem;
+}
+
+#header-background {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+
+    @media (prefers-color-scheme: dark) {
+        filter: brightness(0.3);
+    }
+
+    @media screen and (max-width: 700px) {
+        height: 300px
+    }
+}
+
+#portrait {
+    padding-right: 4rem;
+    max-width: 600px;
+
+    @media screen and (max-width: 1024px) {
+        padding-right: 0;
+    }
 }
