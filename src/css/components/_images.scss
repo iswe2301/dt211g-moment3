@@ -18,6 +18,11 @@ img {
     transform: translate(-50%, -50%);
     z-index: 2;
     padding: 0 2rem;
+
+    // Inverterar logotyp vid darkmode, vit text istället för svart
+    @media (prefers-color-scheme: dark) {
+        filter: invert(100%)
+    }
 }
 
 // Header bakgrund med filter för kontrast och saturation
