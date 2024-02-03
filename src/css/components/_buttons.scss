@@ -1,0 +1,7 @@
+@use '../abstracts/variables';
+@use '../abstracts/extends';
+
+// Inkluderar stil för standard knappar
+.standard-btn {
+    @extend %button-style;
+}
