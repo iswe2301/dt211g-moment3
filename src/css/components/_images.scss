@@ -10,24 +10,29 @@ img {
     width: 100%;
 }
 
+// Logotyp med absolut position, centrerar med transform
 #logo {
     max-width: 1024px;
     min-height: 60px;
     position: absolute;
     top: 30%;
-    left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
     padding: 0 2rem;
 }
 
+// Header bakgrund med filter för kontrast och saturation
 #header-background {
     width: 100%;
     height: 500px;
     object-fit: cover;
+    filter: contrast(1.5) saturate(1.5);
+    opacity: 0.5;
 
+    // Dark mode, filter för att minska ljus
     @media (prefers-color-scheme: dark) {
         filter: brightness(0.3);
+        opacity: 1;
     }
 
     @media screen and (max-width: 700px) {
@@ -39,7 +44,21 @@ img {
     padding-right: 4rem;
     max-width: 600px;
 
+    // Kontroll om is-round är sant, ändrar border radius till 50 % (rund bild)
+    @if variables.$is-round {
+        border-radius: 50%;
+    }
+
+    // Vid falskt förblir bilden ordinarie form
+    else {
+        border-radius: 0;
+    }
+
     @media screen and (max-width: 1024px) {
         padding-right: 0;
     }
+}
+
+.winter-pictures {
+    margin-bottom: 2rem;
 }

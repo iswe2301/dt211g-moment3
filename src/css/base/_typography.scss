@@ -7,11 +7,11 @@ html {
     height: 100%;
 }
 
-/* Styling för rubriker */
+/* Styling för rubriker, mixin för gemensamma egenskaper */
 h1 {
     @include mixins.heading-style(3rem, 4rem, 700);
     text-align: center;
-    color: variables.$darkmode-primary-color !important;
+    color: variables.$darkmode-primary-color;
     margin: 4rem 0 2rem 0;
 }
 

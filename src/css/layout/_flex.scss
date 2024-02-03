@@ -10,12 +10,10 @@ main {
   max-width: 1200px;
   min-height: 100vh;
 
+  // Minskar margin vid mindre skärm
   @media screen and (max-width: 700px) {
     margin: 300px auto 0 auto;
-  }
-
-  @media screen and (max-width: 480px) {
-    margin: 250px auto 0 auto;
+    padding-top: 0;
   }
 }
 
@@ -24,6 +22,7 @@ main {
   flex-direction: row-reverse;
   align-items: center;
 
+  // Ändrar till column vid mindre skärm
   @media screen and (max-width: 1024px) {
     flex-direction: column;
   }

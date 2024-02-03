@@ -1,5 +1,6 @@
 @use 'variables';
 
+// Mixin för flesx och centering av layout
 @mixin center-flex() {
   display: flex;
   flex-direction: column;
@@ -16,6 +17,7 @@
   letter-spacing: 0.2rem;
   line-height: $line-height;
 
+  // Darkmode på rubriker
   @media (prefers-color-scheme: dark) {
     color: variables.$darkmode-text-color;
   }

@@ -4,12 +4,13 @@
 footer {
     width: 100%;
     height: auto;
-    padding: 1rem;
+    padding: 2rem 1rem;
     margin: 5rem 0 0 0;
     background-color: variables.$primary-color;
     color: variables.$light-text-color;
     text-align: center;
 
+    // Darkmode för footer
     @media (prefers-color-scheme: dark) {
         background-color: variables.$darkmode-primary-color;
         color: variables.$darkmode-text-color;

@@ -17,6 +17,7 @@ body {
     color: variables.$dark-text-color;
     height: 100%;
 
+    // Darkmode för body
     @media (prefers-color-scheme: dark) {
         background-color: variables.$darkmode-background-color;
         color: variables.$darkmode-text-color;

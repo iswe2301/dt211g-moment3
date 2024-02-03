@@ -3,7 +3,7 @@ $font-text: 'Roboto', Helvetica, Arial, sans-serif;
 $font-heading: "Montserrat", 'Roboto', Helvetica, sans-serif;
 
 // Ljust tema
-$background-color: #ffeafc;
+$background-color: #fff6fd;
 $primary-color: rgb(32, 32, 32);
 $secondary-color: pink;
 $link-color: hotpink;
@@ -17,3 +17,6 @@ $darkmode-background-color: #333;
 $darkmode-primary-color: #000000;
 $darkmode-hover-color: lighten($link-color, 10%);
 $darkmode-text-color: white;
+
+// Sätter variabel till sant
+$is-round: true;
