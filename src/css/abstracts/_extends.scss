@@ -11,7 +11,7 @@
         color: variables.$hover-color;
         text-decoration: underline;
         text-underline-offset: 0.5rem;
-        text-decoration-color: black;
+        text-decoration-color: variables.$darkmode-primary-color;
 
         @media (prefers-color-scheme: dark) {
             color: variables.$darkmode-hover-color;
@@ -28,7 +28,7 @@
     color: variables.$hover-color !important;
     text-decoration: underline !important;
     text-underline-offset: 0.5rem;
-    text-decoration-color: black !important;
+    text-decoration-color: variables.$darkmode-primary-color !important;
     font-weight: bold;
 
     @media (prefers-color-scheme: dark) {
