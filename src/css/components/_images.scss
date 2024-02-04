@@ -23,6 +23,14 @@ img {
     @media (prefers-color-scheme: dark) {
         filter: invert(100%)
     }
+
+    @media screen and (max-width: 700px) {
+        top: 55%;
+    }
+
+    @media screen and (max-width: 500px) {
+        top: 60%;
+    }
 }
 
 // Header bakgrund med filter för kontrast och saturation
