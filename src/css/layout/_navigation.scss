@@ -65,29 +65,20 @@ header {
 #mobilenav {
     display: none;
     background-color: variables.$background-color;
-    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.70);
-    position: absolute;
+    position: fixed;
     right: 0;
-    top: 200px;
-    height: auto;
-    padding: 10rem 2rem 0 2rem;
+    top: 40px;
+    height: 100vh;
+    padding: 2rem;
     width: 100vw;
-    z-index: 2;
+    z-index: 3;
 
     ul {
         width: 100%;
-        margin-top: 25%;
+        margin-top: 6rem;
         padding-bottom: 2rem;
         text-align: center;
         flex-direction: column;
-
-        @media screen and (max-width: 600px) {
-            margin-top: 15%;
-        }
-
-        @media screen and (max-width: 480px) {
-            margin-top: 0;
-        }
     }
 
     li {
@@ -102,10 +93,6 @@ header {
     @media (prefers-color-scheme: dark) {
         background-color: variables.$darkmode-background-color;
     }
-
-    @media screen and (max-width: 480px) {
-        padding: 8rem 2rem 0 2rem;
-    }
 }
 
 // Inkluderar egenskaper för aktiv länk genom extend
@@ -116,19 +103,23 @@ header {
 /* Styling för mobilmenyknapp */
 .menubtn {
     display: flex;
-    position: absolute;
-    top: 50%;
-    right: 3.5rem;
+    justify-content: flex-end;
+    position: fixed;
+    padding: 1rem 2rem;
+    top: 0;
+    right: 0;
+    width: 100%;
     border: none;
-    background-color: transparent;
+    box-shadow: 0 0px 10px rgba(0, 0, 0, 0.70);
+    background-color: variables.$background-color;
     align-items: center;
     cursor: pointer;
-    z-index: 3;
+    z-index: 4;
 
     /* Styling för menytext */
     #menu-text {
         @include mixins.heading-style(2.4rem, 2.4rem, 600);
-        margin-right: 10%;
+        margin-right: 5%;
         color: variables.$darkmode-primary-color;
     }
 
@@ -166,6 +157,10 @@ header {
     // Döljer mobilmenyknapp på större skärmar
     @media screen and (min-width: 701px) {
         display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        background-color: variables.$darkmode-background-color;
     }
 }
 
