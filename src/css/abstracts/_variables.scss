@@ -16,7 +16,7 @@ $light-text-color: white;
 $darkmode-background-color: #333;
 $darkmode-primary-color: #000000;
 $darkmode-hover-color: lighten($link-color, 10%);
-$darkmode-text-color: white;
+$darkmode-text-color: $light-text-color;
 
 // Sätter variabel till sant
 $is-round: true;
