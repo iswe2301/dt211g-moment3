@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap">
+    <script src="js/main.js" type="module"></script>
+    <title>Start - Moment 1</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div></div>
+    <header>
+        <picture class="background-img">
+            <source srcset="images/header_background.jpg?as=avif" media="(min-width: 1201px)" type="image/avif">
+            <source srcset="images/header_background.jpg?as=webp" media="(min-width: 1201px)" type="image/webp">
+            <source srcset="images/header_background.jpg" media="(min-width: 1201px)" type="image/jpeg">
+            <source srcset="images/header_background.jpg?as=avif&width=1200"
+                media="(min-width: 801px) and (max-width: 1200px)" type="image/avif">
+            <source srcset="images/header_background.jpg?as=webp&width=1200"
+                media="(min-width: 801px) and (max-width: 1200px)" type="image/webp">
+            <source srcset="images/header_background.jpg?width=1200" media="(min-width: 801px) and (max-width: 1200px)"
+                type="image/jpeg">
+            <source srcset="images/header_background.jpg?as=avif&width=800"
+                media="(min-width: 501px) and (max-width: 800px)" type="image/avif">
+            <source srcset="images/header_background.jpg?as=webp&width=800"
+                media="(min-width: 501px) and (max-width: 800px)" type="image/webp">
+            <source srcset="images/header_background.jpg?width=800" media="(min-width: 501px) and (max-width: 800px)"
+                type="image/jpeg">
+            <source srcset="images/header_background.jpg?as=avif&width=500" media="(max-width: 500px)"
+                type="image/avif">
+            <source srcset="images/header_background.jpg?as=webp&width=500" media="(max-width: 500px)"
+                type="image/webp">
+            <source srcset="images/header_background.jpg?width=500" media="(max-width: 500px)" type="image/jpeg">
+            <img id="header-background" src="images/header_background.jpg" alt="Blå himmel med moln">
+        </picture>
+        <a href="index.html">
+            <img id=logo src="images/logo.svg" alt="Logotyp">
+        </a>
+        <nav id="computernav">
+            <ul>
+                <li><a href="index.html">START</a></li>
+                <li><a href="sass.html">SASS</a></li>
+                <li><a class="active" href="images.html">BILDER</a></li>
+                <li><a href="animate.html">ANIMERING</a></li>
+                <li class="no-border"><a href="#">OM MIG</a></li>
+            </ul>
+        </nav>
+        <!-- Hamburgermeny för mobil -->
+        <button class="menubtn" aria-label="Huvudmeny">
+            <span id="menu-text">MENY</span>
+            <span class="menuicon">
+                <span id="line1"></span>
+                <span id="line2"></span>
+                <span id="line3"></span>
+            </span>
+        </button>
+    </header>
+
+    <nav id="mobilenav">
+        <ul>
+            <li><a href="index.html">START</a></li>
+            <li><a href="sass.html">SASS</a></li>
+            <li><a class="active" href="images.html">BILDER</a></li>
+            <li><a href="animate.html">ANIMERING</a></li>
+            <li><a href="#">OM MIG</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>ANIMERINGAR</h1>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Isa Westling</p>
+        <p>DT211G Frontend-baserad webbutveckling</p>
+        <p>Webbutvecklingsprogrammet, Mittuniversitetet</p>
+    </footer>
+</body>
+
+</html>
