@@ -1,3 +1,5 @@
+@use '../abstracts/variables';
+
 // Keyframes som skalar storleken från 0.8 till 1.2
 @keyframes scale {
     from {
@@ -14,10 +16,39 @@
 
     40%,
     60% {
-        left: 100%; // Flyttar 100 % till höger
+        left: 100%; // Flyttar 100 % till höger vid 40-60 % av animeringstiden
     }
 
     100% {
         left: 0%; // Tillbaka till ursprungsposition
     }
+}
+
+// Container för animation, döljer overflow
+.animation-container {
+    overflow: hidden;
+    margin-bottom: 5rem;
+    padding-right: 1rem;
+}
+
+// Styling för animerade texten, relativ position
+.animate-text {
+    position: relative;
+    letter-spacing: 0.4rem;
+    font-size: 48px;
+    font-weight: 600;
+    padding: 0.2rem 1rem 0.2rem 0;
+}
+
+// Animering av box ovanpå text, absolut position
+.animate-text:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: variables.$background-color;
+    border-left: 0.8rem solid variables.$link-color;
+    animation: move-right 4s steps(11) infinite; // Flyttar sig åt höger 11 steg under 4 s, pågår oändligt
 }
