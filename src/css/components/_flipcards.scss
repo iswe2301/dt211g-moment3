@@ -1,0 +1,65 @@
+@use '../abstracts/variables';
+@use './animations';
+
+// Flipcard med 3D-effekt genom perspektiv
+.flip-card {
+    perspective: 60rem;
+    width: 500px;
+    margin-right: 5rem;
+    transform: scale(0.9); // Skalar ner defaultstorlek
+    transition: 0.5s ease-in-out; // Skalning sker under 0.5s med ease in out
+
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        transition: transform 0.8s; // Transition sker på transform (rotering) under 0.8 s
+        transform-style: preserve-3d; // Underordnade element behåller 3D-effekten
+
+        // Positionering för fram- och baksida på flip card
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            backface-visibility: hidden; // Döljer baksidan på flip
+        }
+
+        // Styling för baksida av flipcard, roterar innehåll 180 grader runt Y axeln */
+        .flip-card-back {
+            border: solid 0.5rem variables.$link-color;
+            transform: rotateY(180deg);
+            padding: 0 2rem 4rem 2rem;
+            background-color: variables.$light-text-color;
+            font-size: 2rem;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.0); // Skalar upp storlek vid hover
+        cursor: pointer;
+    }
+}
+
+// Lägger till pil ovanpå flip-bilden, absolut position
+.flip-card-front:before {
+    content: url(../images/arrow.svg);
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+
+    @media screen and (max-width: 600px) {
+        animation: scale 1s infinite ease-in-out alternate; // Pilen pulserar konstant på små skärmar
+    }
+}
+
+// Pilen pulserar konstant vid hover över flipcard
+.flip-card:hover .flip-card-front:before {
+    animation: scale 1s infinite ease-in-out alternate;
+}
+
+// Vänder horisontellt 180 grader
+.flipped {
+    transform: rotateY(180deg);
+}

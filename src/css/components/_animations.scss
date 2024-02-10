@@ -1,0 +1,23 @@
+// Keyframes som skalar storleken från 0.8 till 1.2
+@keyframes scale {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+// Keyframes som flyttar element
+@keyframes move-right {
+
+    40%,
+    60% {
+        left: 100%; // Flyttar 100 % till höger
+    }
+
+    100% {
+        left: 0%; // Tillbaka till ursprungsposition
+    }
+}
