@@ -31,3 +31,11 @@ main {
     flex-direction: column;
   }
 }
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2rem;
+}
