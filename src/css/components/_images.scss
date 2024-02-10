@@ -78,3 +78,10 @@ img {
 .winter-pictures {
     margin-bottom: 2rem;
 }
+
+// Sätter maxbredd på bild
+#Lilo {
+    max-width: 100%;
+    border-radius: 50%;
+    border: 0.5rem solid variables.$link-color;
+}
