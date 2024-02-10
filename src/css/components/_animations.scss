@@ -11,6 +11,17 @@
     }
 }
 
+// Keyframes som skalar storleken från 1 till 1.5
+@keyframes scale-up {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.5);
+    }
+}
+
 // Keyframes som flyttar element
 @keyframes move-right {
 
@@ -24,31 +35,77 @@
     }
 }
 
+// Keyframes som skiftar färg
+@keyframes shift-color {
+    from {
+        color: variables.$dark-text-color;
+    }
+
+    to {
+        color: variables.$link-color;
+    }
+}
+
+// Darkmode keyframes
+@keyframes shift-color-darkmode {
+    from {
+        color: variables.$darkmode-text-color;
+    }
+
+    to {
+        color: variables.$link-color;
+    }
+}
+
+
 // Container för animation, döljer overflow
 .animation-container {
     overflow: hidden;
     margin-bottom: 5rem;
     padding-right: 1rem;
+
+    // Styling för animerade texten, relativ position
+    .animate-text {
+        position: relative;
+        letter-spacing: 0.4rem;
+        font-size: 4.8rem;
+        font-weight: 600;
+        padding: 0.2rem 1rem 0.2rem 0;
+
+        @media screen and (max-width: 600px) {
+            font-size: 3.2rem;
+        }
+    }
+
+    // Animering av box ovanpå text, absolut position
+    .animate-text:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: variables.$background-color;
+        border-left: 0.8rem solid variables.$link-color;
+        animation: move-right 4s steps(11) infinite; // Flyttar sig åt höger 11 steg under 4 s, pågår oändligt
+
+        // Dark mode
+        @media (prefers-color-scheme: dark) {
+            background-color: variables.$darkmode-background-color;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        margin-bottom: 0;
+    }
 }
 
-// Styling för animerade texten, relativ position
-.animate-text {
-    position: relative;
-    letter-spacing: 0.4rem;
-    font-size: 48px;
-    font-weight: 600;
-    padding: 0.2rem 1rem 0.2rem 0;
-}
+// Animering med keyframes, 2s lång, pågår infinite och byter håll
+.animated-color {
+    animation: shift-color 2s infinite alternate;
 
-// Animering av box ovanpå text, absolut position
-.animate-text:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background-color: variables.$background-color;
-    border-left: 0.8rem solid variables.$link-color;
-    animation: move-right 4s steps(11) infinite; // Flyttar sig åt höger 11 steg under 4 s, pågår oändligt
+    // Dark mode
+    @media (prefers-color-scheme: dark) {
+        animation: shift-color-darkmode 2s infinite alternate;
+    }
 }
