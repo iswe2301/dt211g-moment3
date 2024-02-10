@@ -1,4 +1,5 @@
 @use '../abstracts/variables';
+@use './animations';
 
 // Responsiva bilder
 img {
@@ -6,8 +7,10 @@ img {
     height: auto;
 }
 
+// Döljer overflow
 .background-img {
     width: 100%;
+    overflow: hidden;
 }
 
 // Logotyp med absolut position, centrerar med transform
@@ -38,8 +41,11 @@ img {
     width: 100%;
     height: 500px;
     object-fit: cover;
+    object-position: right;
     filter: contrast(1.5) saturate(1.5);
     opacity: 0.5;
+    overflow: hidden;
+    animation: scale-up 10s infinite alternate linear;
 
     // Dark mode, filter för att minska ljus
     @media (prefers-color-scheme: dark) {
