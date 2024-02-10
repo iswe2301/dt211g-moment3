@@ -5,10 +5,22 @@ const menuBtnEl = document.querySelector(".menubtn");
 const containerEl = document.querySelector("div");
 const menuiconEl = document.querySelector(".menuicon");
 const sassBtnEl = document.getElementById("SASS-btn");
+const flipCardEl = document.querySelector(".flip-card-inner");
 
 // Händelselyssnare vid klick somm anropar funktioner
 menuBtnEl.addEventListener("click", transformMenu);
 menuBtnEl.addEventListener("click", dropDownMenu);
+
+
+// Lägger till händelselyssnare om knappen finns
+if (sassBtnEl) {
+    sassBtnEl.addEventListener("click", goToSass);
+}
+
+// Lägger till händelselyssnare om flipcard finns
+if (flipCardEl) {
+    flipCardEl.addEventListener("click", flipImage);
+}
 
 // Funktion för att växla mellan klassen cross samt opacity vid klick.
 function transformMenu() {
@@ -41,6 +53,5 @@ function goToSass() {
 
 // Funktion för att vända bild, togglar mellan klass vid klick
 function flipImage() {
-    const flipCardEl = document.querySelector(".flip-card-inner");
     flipCardEl.classList.toggle("flipped");
 }
