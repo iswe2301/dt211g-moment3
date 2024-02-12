@@ -48,9 +48,9 @@
             <ul>
                 <li><a href="index.html">START</a></li>
                 <li><a class="active" href="sass.html">SASS</a></li>
-                <li><a href="images.html">BILDER</a></li>
                 <li><a href="animate.html">ANIMERING</a></li>
-                <li class="no-border"><a href="#">OM MIG</a></li>
+                <li><a href="chart.html">DIAGRAM</a></li>
+                <li class="no-border"><a href="map.html">KARTA</a></li>
             </ul>
         </nav>
         <!-- Hamburgermeny för mobil -->
@@ -68,14 +68,14 @@
         <ul>
             <li><a href="index.html">START</a></li>
             <li><a class="active" href="sass.html">SASS</a></li>
-            <li><a href="images.html">BILDER</a></li>
             <li><a href="animate.html">ANIMERING</a></li>
-            <li><a href="#">OM MIG</a></li>
+            <li><a href="chart.html">DIAGRAM</a></li>
+            <li><a href="map.html">KARTA</a></li>
         </ul>
     </nav>
 
     <main>
-        <section>
+        <section class="flex-container">
             <h1>SASS</h1>
             <h2>Att arbeta med SASS</h2>
             <p>Denna uppgift ingår i kursen DT211G Frontend-baserad webbutveckling. Uppgiften gick ut på att arbeta
@@ -105,6 +105,46 @@
                 sätt sedan tidigare med CSS. Jag kan även tänka mig att det kan leda till ökad komplexitet i ett
                 projekt om SCSS inte används på "rätt sätt", t.ex. om man har alldeles för många partials eller inte
                 strukturerar upp koden rätt.</p>
+            <h2>Bilder</h2>
+            <picture>
+                <source srcset="images/dog.jpg?as=avif&width=800" media="(min-width: 601px)" type="image/avif">
+                <source srcset="images/dog.jpg?as=webp&width=800" media="(min-width: 601px)" type="image/webp">
+                <source srcset="images/dog.jpg?width=800" media="(min-width: 601px)" type="image/jpeg">
+                <source srcset="images/dog.jpg?as=avif&width=450" media="(max-width: 600px)" type="image/avif">
+                <source srcset="images/dog.jpg?as=webp&width=450" media="(max-width: 600px)" type="image/webp">
+                <source srcset="images/dog.jpg?width=450" media="(max-width: 600px)" type="image/jpeg">
+                <img class="winter-pictures" src="images/dog.jpg?width=800"
+                    alt="Hunden Lilo står på en blå träbänk i ett snöigt vinterlandskap">
+            </picture>
+            <picture>
+                <source srcset="images/snow.jpg?as=avif&width=800" media="(min-width: 601px)" type="image/avif">
+                <source srcset="images/snow.jpg?as=webp&width=800" media="(min-width: 601px)" type="image/webp">
+                <source srcset="images/snow.jpg?width=800" media="(min-width: 601px)" type="image/jpeg">
+                <source srcset="images/snow.jpg?as=avif&width=450" media="(max-width: 600px)" type="image/avif">
+                <source srcset="images/snow.jpg?as=webp&width=450" media="(max-width: 600px)" type="image/webp">
+                <source srcset="images/snow.jpg?width=450" media="(max-width: 600px)" type="image/jpeg">
+                <img class="winter-pictures" src="images/snow.jpg?width=800" alt="Snötäckt sjö med skog i bakgrunden">
+            </picture>
+            <picture>
+                <source srcset="images/trees.jpg?as=avif&width=800" media="(min-width: 601px)" type="image/avif">
+                <source srcset="images/trees.jpg?as=webp&width=800" media="(min-width: 601px)" type="image/webp">
+                <source srcset="images/trees.jpg?width=800" media="(min-width: 601px)" type="image/jpeg">
+                <source srcset="images/trees.jpg?as=avif&width=450" media="(max-width: 600px)" type="image/avif">
+                <source srcset="images/trees.jpg?as=webp&width=450" media="(max-width: 600px)" type="image/webp">
+                <source srcset="images/trees.jpg?width=450" media="(max-width: 600px)" type="image/jpeg">
+                <img class="winter-pictures" src="images/trees.jpg?width=800"
+                    alt="Snöiga trätoppar av tall mot en blå himmeö">
+            </picture>
+            <picture>
+                <source srcset="images/branch.jpg?as=avif&width=800" media="(min-width: 601px)" type="image/avif">
+                <source srcset="images/branch.jpg?as=webp&width=800" media="(min-width: 601px)" type="image/webp">
+                <source srcset="images/branch.jpg?width=800" media="(min-width: 601px)" type="image/jpeg">
+                <source srcset="images/branch.jpg?as=avif&width=450" media="(max-width: 600px)" type="image/avif">
+                <source srcset="images/branch.jpg?as=webp&width=450" media="(max-width: 600px)" type="image/webp">
+                <source srcset="images/branch.jpg?width=450" media="(max-width: 600px)" type="image/jpeg">
+                <img class="winter-pictures" src="images/branch.jpg?width=800"
+                    alt="Närild på frostig trädgren med solnedgång i horisonten">
+            </picture>
         </section>
     </main>
 
