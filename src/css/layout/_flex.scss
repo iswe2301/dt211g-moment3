@@ -44,3 +44,7 @@ main {
     @include mixins.center-flex();
   }
 }
+
+.flex-container {
+  @include mixins.center-flex();
+}
