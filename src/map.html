@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap">
+    <script src="js/main.js" type="module"></script>
+    <title>Start - Moment 1</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <div></div>
+    <header>
+        <picture class="background-img">
+            <source srcset="images/header_background.jpg?as=avif" media="(min-width: 1201px)" type="image/avif">
+            <source srcset="images/header_background.jpg?as=webp" media="(min-width: 1201px)" type="image/webp">
+            <source srcset="images/header_background.jpg" media="(min-width: 1201px)" type="image/jpeg">
+            <source srcset="images/header_background.jpg?as=avif&width=1200"
+                media="(min-width: 801px) and (max-width: 1200px)" type="image/avif">
+            <source srcset="images/header_background.jpg?as=webp&width=1200"
+                media="(min-width: 801px) and (max-width: 1200px)" type="image/webp">
+            <source srcset="images/header_background.jpg?width=1200" media="(min-width: 801px) and (max-width: 1200px)"
+                type="image/jpeg">
+            <source srcset="images/header_background.jpg?as=avif&width=800"
+                media="(min-width: 501px) and (max-width: 800px)" type="image/avif">
+            <source srcset="images/header_background.jpg?as=webp&width=800"
+                media="(min-width: 501px) and (max-width: 800px)" type="image/webp">
+            <source srcset="images/header_background.jpg?width=800" media="(min-width: 501px) and (max-width: 800px)"
+                type="image/jpeg">
+            <source srcset="images/header_background.jpg?as=avif&width=500" media="(max-width: 500px)"
+                type="image/avif">
+            <source srcset="images/header_background.jpg?as=webp&width=500" media="(max-width: 500px)"
+                type="image/webp">
+            <source srcset="images/header_background.jpg?width=500" media="(max-width: 500px)" type="image/jpeg">
+            <img id="header-background" src="images/header_background.jpg" alt="Blå himmel med moln">
+        </picture>
+        <a href="index.html">
+            <img id=logo src="images/logo.svg" alt="Logotyp">
+        </a>
+        <nav id="computernav">
+            <ul>
+                <li><a href="index.html">START</a></li>
+                <li><a href="sass.html">SASS</a></li>
+                <li><a href="animate.html">ANIMERING</a></li>
+                <li><a href="chart.html">DIAGRAM</a></li>
+                <li class="no-border active"><a href="map.html">KARTA</a></li>
+            </ul>
+        </nav>
+        <!-- Hamburgermeny för mobil -->
+        <button class="menubtn" aria-label="Huvudmeny">
+            <span id="menu-text">MENY</span>
+            <span class="menuicon">
+                <span id="line1"></span>
+                <span id="line2"></span>
+                <span id="line3"></span>
+            </span>
+        </button>
+    </header>
+
+    <nav id="mobilenav">
+        <ul>
+            <li><a href="index.html">START</a></li>
+            <li><a href="sass.html">SASS</a></li>
+            <li><a href="animate.html">ANIMERING</a></li>
+            <li><a href="chart.html">DIAGRAM</a></li>
+            <li><a class="active" href="map.html">KARTA</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="flex-container">
+            <h1>SASS</h1>
+            <h2>Att arbeta med SASS</h2>
+            <p>Denna uppgift ingår i kursen DT211G Frontend-baserad webbutveckling. Uppgiften gick ut på att arbeta
+                med SASS. Webbplatsens CSS-kod har genererats från SCSS. I mitt arbete har jag använt Parcel tycker
+                att det var riktigt smidigt att komma igång med arbetet med SASS, eftersom det bara var att skapa en
+                scss-fil. Jag har arbetat lite med SCSS tidigare, och då mestadels i form av variabler och nesting.
+                Nesting är en funktion som jag uppskattar mycket då jag tycker att det blir enklare att hålla ihop
+                olika delar av koden.</p>
+            <p>För min egen del tror jag att det kommer att ta tid att vänja mig vid SASS i form av mixins, extends,
+                partials etc. I nuläget tycker jag att det är lite svårt att veta vilka kodblock som kan vara
+                användbara att göra till mixins/extends och hur jag bör dela upp koden i olika partials, men jag
+                antar att det kommer att klarna upp med tiden.</p>
+            <h2>Fördelar</h2>
+            <p>Jag ser flera fördelar med att använda SASS framåt. Dels blir koden mer lättläst eftersom nesting
+                underlättar samt atyt partials hjälper till att organisera och dela upp olika delar av kod på olika
+                ställen. Detta istället för att jag behöver leta efter exempelvis en specifik klass som jag skapat i
+                ett enda stort CSS-dokument.</p>
+            <p>Jag ser även fördelarna med variabler och då specifikt till färger. Istället för att ändra färger på
+                massvis av olika ställen i koden kan jag med variabler ändra på ett enda ställe, och det slår igenom
+                på alla element som är kopplade till denna färg.</p>
+            <p>Jag kan även se fördelar med extends och mixins för att återanvända kod och dela olika egenskaper
+                mellan diverse selektorer, men jag känner att just denna del kommer ta lite längre tid att vänja sig
+                vid kring hur man på bästa sätt ska använda dessa.</p>
+            <h2>Nackdelar</h2>
+            <p>Gällande nackdelar är det väl just inlärningskurvan och att vänja sig vid hur man ska använda SCSS på
+                bästa sätt som kan vara lite krångligt i början, speciellt när man är van att arbeta på ett visst
+                sätt sedan tidigare med CSS. Jag kan även tänka mig att det kan leda till ökad komplexitet i ett
+                projekt om SCSS inte används på "rätt sätt", t.ex. om man har alldeles för många partials eller inte
+                strukturerar upp koden rätt.</p>
+            <h2>Bilder</h2>
+            <picture>
+                <source srcset="images/dog.jpg?as=avif&width=800" media="(min-width: 601px)" type="image/avif">
+                <source srcset="images/dog.jpg?as=webp&width=800" media="(min-width: 601px)" type="image/webp">
+                <source srcset="images/dog.jpg?width=800" media="(min-width: 601px)" type="image/jpeg">
+                <source srcset="images/dog.jpg?as=avif&width=450" media="(max-width: 600px)" type="image/avif">
+                <source srcset="images/dog.jpg?as=webp&width=450" media="(max-width: 600px)" type="image/webp">
+                <source srcset="images/dog.jpg?width=450" media="(max-width: 600px)" type="image/jpeg">
+                <img class="winter-pictures" src="images/dog.jpg?width=800"
+                    alt="Hunden Lilo står på en blå träbänk i ett snöigt vinterlandskap">
+            </picture>
+            <picture>
+                <source srcset="images/snow.jpg?as=avif&width=800" media="(min-width: 601px)" type="image/avif">
+                <source srcset="images/snow.jpg?as=webp&width=800" media="(min-width: 601px)" type="image/webp">
+                <source srcset="images/snow.jpg?width=800" media="(min-width: 601px)" type="image/jpeg">
+                <source srcset="images/snow.jpg?as=avif&width=450" media="(max-width: 600px)" type="image/avif">
+                <source srcset="images/snow.jpg?as=webp&width=450" media="(max-width: 600px)" type="image/webp">
+                <source srcset="images/snow.jpg?width=450" media="(max-width: 600px)" type="image/jpeg">
+                <img class="winter-pictures" src="images/snow.jpg?width=800" alt="Snötäckt sjö med skog i bakgrunden">
+            </picture>
+            <picture>
+                <source srcset="images/trees.jpg?as=avif&width=800" media="(min-width: 601px)" type="image/avif">
+                <source srcset="images/trees.jpg?as=webp&width=800" media="(min-width: 601px)" type="image/webp">
+                <source srcset="images/trees.jpg?width=800" media="(min-width: 601px)" type="image/jpeg">
+                <source srcset="images/trees.jpg?as=avif&width=450" media="(max-width: 600px)" type="image/avif">
+                <source srcset="images/trees.jpg?as=webp&width=450" media="(max-width: 600px)" type="image/webp">
+                <source srcset="images/trees.jpg?width=450" media="(max-width: 600px)" type="image/jpeg">
+                <img class="winter-pictures" src="images/trees.jpg?width=800"
+                    alt="Snöiga trätoppar av tall mot en blå himmeö">
+            </picture>
+            <picture>
+                <source srcset="images/branch.jpg?as=avif&width=800" media="(min-width: 601px)" type="image/avif">
+                <source srcset="images/branch.jpg?as=webp&width=800" media="(min-width: 601px)" type="image/webp">
+                <source srcset="images/branch.jpg?width=800" media="(min-width: 601px)" type="image/jpeg">
+                <source srcset="images/branch.jpg?as=avif&width=450" media="(max-width: 600px)" type="image/avif">
+                <source srcset="images/branch.jpg?as=webp&width=450" media="(max-width: 600px)" type="image/webp">
+                <source srcset="images/branch.jpg?width=450" media="(max-width: 600px)" type="image/jpeg">
+                <img class="winter-pictures" src="images/branch.jpg?width=800"
+                    alt="Närild på frostig trädgren med solnedgång i horisonten">
+            </picture>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Isa Westling</p>
+        <p>DT211G Frontend-baserad webbutveckling</p>
+        <p>Webbutvecklingsprogrammet, Mittuniversitetet</p>
+    </footer>
+</body>
+
+</html>
