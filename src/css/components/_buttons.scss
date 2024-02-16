@@ -5,3 +5,12 @@
 .standard-btn {
     @extend %button-style;
 }
+
+#search-btn {
+    @extend %button-style;
+    width: 100%;
+    max-width: 10rem;
+    font-size: 1.6rem;
+    height: 3rem;
+    margin: 3.8rem 0 0 2rem;
+}
