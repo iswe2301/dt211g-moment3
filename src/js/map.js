@@ -1,6 +1,7 @@
 "use strict";
 
 let map; // Lagrar variabel för karta
+let searchInputEl = document.getElementById("search") // Hämtar och lagrar variabel för sökfältet
 
 // Asynkron funktion för att skapa karta
 async function createMap() {
@@ -22,3 +23,22 @@ async function createMap() {
 
 // Anropar funktion
 createMap()
+
+// Asynkron funktion för att skapa autocomplete
+async function createAutocomplete() {
+    try {
+        // Inväntar att createMap har slutförts
+        await createMap();
+        // Skapar ny instans av autocomplete från google maps javascript places api
+        autocomplete = new google.maps.places.Autocomplete(
+            // Kopplar autocomplete funktionen till search-elementet
+            searchInputEl, {
+            types: ['establishment', 'geocode'], // Specificerar typer av sökning till både platser och adresser
+            fields: ['geometry', 'name'], // Specificerar de fält som ska returneras när en plats väljs till geografisk plats och platsens namn
+            language: 'sv' // Sätter språket till svenska
+        });
+        // Fångar upp eventuella felmeddelanden
+    } catch (error) {
+        console.error('Felmeddelande:', error);
+    }
+}
