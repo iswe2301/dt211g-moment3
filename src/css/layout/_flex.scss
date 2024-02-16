@@ -45,6 +45,40 @@ main {
   }
 }
 
+.flexbox2 {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  flex-direction: row;
+  justify-content: start;
+  margin: 2rem 0 0 0;
+  align-items: center;
+}
+
 .flex-container {
   @include mixins.center-flex();
+}
+
+.bar-chart-container {
+  @include mixins.center-flex();
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  max-width: 800px;
+
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 20%;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-bottom: 40%;
+  }
+}
+
+.pie-chart-container {
+  @include mixins.center-flex();
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+  margin: 20% 0 10% 0;
 }
