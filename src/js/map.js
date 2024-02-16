@@ -1,6 +1,7 @@
 "use strict";
 
 let map; // Lagrar variabel för karta
+let marker; // Lagrar variabel för markering
 let searchInputEl = document.getElementById("search") // Hämtar och lagrar variabel för sökfältet
 
 // Asynkron funktion för att skapa karta
@@ -24,6 +25,7 @@ async function createMap() {
 // Anropar funktion
 createMap()
 
+
 // Asynkron funktion för att skapa autocomplete
 async function createAutocomplete() {
     try {
@@ -45,6 +47,20 @@ async function createAutocomplete() {
             // Anropar funktion med platsen som argument
             displayMarker(place);
         });
+        // Hämtar element för sökknappen
+        const searchButton = document.getElementById('search-btn');
+        // Lägger till händelselyssnare för sökknappen som vid klick anropar funktion
+        searchButton.addEventListener('click', searchPlace);
+        // Lägger till händelselyssnare för Enter i sökfältet
+        searchInputEl.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                // Förhindrar standardbeteendet för Enter-knappen
+                event.preventDefault();
+                // Anropar sökfunktionen när Enter trycks
+                searchPlace();
+            }
+        });
+        // Fångar upp eventuella felmeddelanden
     } catch (error) {
         console.error('Felmeddelande:', error);
     }
@@ -52,6 +68,30 @@ async function createAutocomplete() {
 
 // Anropar funktionen
 createAutocomplete();
+
+// Funktion för att utföra sökning av plats
+function searchPlace() {
+
+    // Skapar ett objekt med sökparametrar inför platsförfrågan
+    const searchQuest = {
+        query: searchInputEl.value, // Definierar sökningen till värdet från inputfältet.
+        fields: ['geometry', 'name'] // Specificerar de fält som ska inkluderas i resultaten till geografisk plats och platsens namn
+    };
+    // Skapar en ny instans av PlacesService med referens till befintlig karta och lagrar i variabel
+    const getPlace = new google.maps.places.PlacesService(map);
+
+    // Utför en platsförfrågan med sökparametrarna och en callback-funktion som hanterar sökresultaten och statusen
+    getPlace.findPlaceFromQuery(searchQuest, function (results, status) {
+        // Kontrollerar om statusen för sökförfrågan är OK
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            // Anropar isåfall funktionen displayMarker med den första platsen i resultaten som argument
+            displayMarker(results[0]);
+        } else {
+            // Skriver annars ut felmeddelande med status
+            console.error('Felmeddelande:', status);
+        }
+    });
+}
 
 // Funktion för att placera ut markering på kartan
 function displayMarker(place) {
