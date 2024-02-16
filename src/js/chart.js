@@ -92,3 +92,80 @@ async function displayCourseData() {
 
 // Anropar funktion
 displayCourseData();
+
+// Asynkron funktion som hämtar programdata till cirkeldiagrammet
+async function getProgramData() {
+    try {
+        // Utför fetch-anrop och inväntar svaret
+        const response = await fetch("https://studenter.miun.se/~mallar/dt211g/");
+        // Konverterar svaret till JSON och inväntar resultatet
+        const data = await response.json();
+
+        // Filtrerar datan för att endast inkludera program
+        const programs = data.filter(program => program.type === "Program");
+
+        // Sorterar programmen efter antal sökande i fallande ordning
+        programs.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
+
+        // Skapar ny array genom att välja ut de fem första programmen, från index 0 - 4.
+        const topPrograms = programs.slice(0, 5);
+
+        // Skapar nya arrayer med map genom att hämta programnamn och antal sökande
+        const programName = topPrograms.map(program => program.name);
+        const programApplicants = topPrograms.map(program => program.applicantsTotal);
+
+        // Returnerar programnamn och antal sökande
+        return { programName, programApplicants };
+
+        // Fångar upp eventuella felmeddelanden
+    } catch (error) {
+        console.error("Error-meddelande:", error);
+        throw error;
+    }
+}
+
+// Asynkron funktion för att visa cirkeldiagrammet
+async function displayProgramData() {
+    try {
+        // Inväntar att data har hämtats från getProgram-funktionen
+        const data = await getProgramData();
+
+        // Skapar diagram
+        new Chart(
+            // Hämtar element för cirkeldiagram
+            document.getElementById('pie-chart'),
+            {
+                // Av typen cirkeldiagram
+                type: 'pie',
+                data: {
+                    labels: data.programName, // Sätter cirkeldelarnas ettiketter till programmens namn
+                    datasets: [{
+                        label: 'Antal sökande', // Sätter ettiketter för data till Antal sökande
+                        data: data.programApplicants, // Sätter data till antal programsökande
+                        backgroundColor: [ // Sätter bakgrundsfärger för de olika delarna
+                            'rgba(255, 105, 180, 0.5)',
+                            'rgba(54, 162, 235, 0.5)',
+                            'rgba(255, 206, 86, 0.5)',
+                            'rgba(75, 192, 192, 0.5)',
+                            'rgba(153, 102, 255, 0.5)'
+                        ],
+                        borderColor: [ // Sätter border färger för de olika delarna
+                            'rgba(255, 105, 180)',
+                            'rgba(54, 162, 235)',
+                            'rgba(255, 206, 86)',
+                            'rgba(75, 192, 192)',
+                            'rgba(153, 102, 255)'
+                        ],
+                        borderWidth: 1 // Sätter borderns bredd
+                    }]
+                }
+            });
+        // Fångar upp eventuella felmeddelanden
+    } catch (error) {
+        console.error('Error-meddelande:', error);
+        throw error;
+    }
+}
+
+// Anropar funktionen
+displayProgramData();
